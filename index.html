@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FlavorFinder – Discover delicious recipes from around the world. Browse meals by category, area, and more.">
+  <title>FlavorFinder – Smart Recipe Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="logo-icon">🍳</span>
+        <span class="logo-text">FlavorFinder</span>
+      </a>
+      <span class="nav-tagline">Smart Recipe Explorer</span>
+    </div>
+  </nav>
+
+  <header id="hero">
+    <div class="hero-content">
+      <h1>Explore World-Class <span class="gradient-text">Recipes</span></h1>
+      <p class="hero-subtitle">Discover culinary masterpieces from every corner of the globe, curated just for you.</p>
+    </div>
+    <div class="hero-glow"></div>
+  </header>
+
+  <main id="main-content">
+    <section id="recipes-section">
+      <div class="section-header">
+        <h2>Featured Recipes</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div id="loader" class="loader-container">
+        <div class="spinner">
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+        </div>
+        <p class="loader-text">Cooking up something delicious…</p>
+      </div>
+
+      <div id="error-container" class="error-container hidden">
+        <div class="error-icon">⚠️</div>
+        <h3 class="error-title">Oops! Something went wrong</h3>
+        <p class="error-message" id="error-message">We couldn't fetch the recipes. Please check your connection and try again.</p>
+        <button id="retry-btn" class="retry-btn">Try Again</button>
+      </div>
+
+      <div id="recipes-grid" class="recipes-grid"></div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="footer-inner">
+      <p>&copy; 2026 FlavorFinder. Powered by <a href="https://www.themealdb.com/" target="_blank" rel="noopener noreferrer">TheMealDB</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
