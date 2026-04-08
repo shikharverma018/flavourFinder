@@ -12,28 +12,70 @@
 </head>
 <body>
   <nav id="navbar">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <span class="logo-icon">🍳</span>
-        <span class="logo-text">FlavorFinder</span>
-      </a>
-      <span class="nav-tagline">Smart Recipe Explorer</span>
-    </div>
+      <div class="nav-inner">
+        <a href="#" id="home-logo" class="nav-logo">
+          <span class="logo-icon">🍳</span>
+          <span class="logo-text">FlavorFinder</span>
+        </a>
+        <div class="nav-actions">
+          <button id="nav-home" class="nav-btn">Home</button>
+        </div>
+      </div>
   </nav>
 
-  <header id="hero">
-    <div class="hero-content">
-      <h1>Explore World-Class <span class="gradient-text">Recipes</span></h1>
-      <p class="hero-subtitle">Discover culinary masterpieces from every corner of the globe, curated just for you.</p>
-    </div>
-    <div class="hero-glow"></div>
-  </header>
-
   <main id="main-content">
-    <section id="recipes-section">
+    <div id="list-view" class="view-container active">
+      <header id="hero">
+        <div class="hero-content">
+          <h1>Explore World-Class <span class="gradient-text">Recipes</span></h1>
+          <p class="hero-subtitle">Discover culinary masterpieces from every corner of the globe, curated just for you.</p>
+        </div>
+        <div class="hero-glow"></div>
+      </header>
+
+      <section id="recipes-section">
       <div class="section-header">
         <h2>Featured Recipes</h2>
         <div class="section-line"></div>
+      </div>
+
+      <div class="controls-container">
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input" placeholder="Search delicious recipes..." aria-label="Search recipes">
+        </div>
+        
+        <div class="filter-sort-group">
+          <div class="select-wrapper">
+            <select id="category-filter" aria-label="Filter by category">
+              <option value="All">All Categories</option>
+              <option value="Beef">Beef</option>
+              <option value="Chicken">Chicken</option>
+              <option value="Dessert">Dessert</option>
+              <option value="Lamb">Lamb</option>
+              <option value="Pasta">Pasta</option>
+              <option value="Pork">Pork</option>
+              <option value="Seafood">Seafood</option>
+              <option value="Side">Side</option>
+              <option value="Starter">Starter</option>
+              <option value="Vegetarian">Vegetarian</option>
+            </select>
+          </div>
+
+          <div class="sort-buttons">
+            <button id="sort-asc" class="sort-btn active" title="Sort A-Z">AZ</button>
+            <button id="sort-desc" class="sort-btn" title="Sort Z-A">ZA</button>
+          </div>
+
+          <button id="view-favorites-btn" class="favorites-toggle-btn" title="View Favorites">
+            <span class="btn-icon">❤️</span>
+            <span class="btn-text">View Favorites</span>
+          </button>
+
+          <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Dark/Light Mode">
+            <span class="theme-icon">🌙</span>
+          </button>
+        </div>
       </div>
 
       <div id="loader" class="loader-container">
@@ -54,6 +96,18 @@
 
       <div id="recipes-grid" class="recipes-grid"></div>
     </section>
+    </div>
+
+    <div id="details-view" class="view-container hidden">
+      <div class="details-nav">
+        <button id="back-btn" class="back-link">
+          <span class="back-icon">←</span> Back to list
+        </button>
+      </div>
+      <div id="details-content" class="details-content">
+        <!-- Dynamically rendered -->
+      </div>
+    </div>
   </main>
 
   <footer id="footer">
